@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0756c9">
+  <meta name="description" content="GSMSIL237 - catálogo demonstrativo de jogos.">
+  <title>GSMSIL237 | Catálogo de Jogos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="GSMSIL237 início">
+      <span class="brand-mark">G</span>
+      <span>GSMSIL<span class="brand-number">237</span></span>
+    </a>
+
+    <div class="header-actions">
+      <span class="demo-label">MODO DEMONSTRAÇÃO</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">BEM-VINDO À GSMSIL237</p>
+        <h1>Seu catálogo de jogos</h1>
+        <p class="hero-description">
+          Explore os jogos demonstrativos e conheça a plataforma.
+        </p>
+        <a class="primary-button" href="#jogos">Explorar jogos</a>
+      </div>
+      <div class="hero-decoration" aria-hidden="true">★</div>
+    </section>
+
+    <section class="catalog" id="jogos">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">DESCUBRA</p>
+          <h2>Jogos em destaque</h2>
+        </div>
+        <span class="game-count" id="game-count">9 jogos</span>
+      </div>
+
+      <label class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <input
+          type="search"
+          id="search"
+          placeholder="Pesquisar jogos..."
+          aria-label="Pesquisar jogos"
+        >
+      </label>
+
+      <nav class="categories" aria-label="Categorias de jogos">
+        <button class="category active" data-category="todos">Todos</button>
+        <button class="category" data-category="fortune">Fortune</button>
+        <button class="category" data-category="aventura">Aventura</button>
+        <button class="category" data-category="esporte">Esporte</button>
+      </nav>
+
+      <div class="games-grid" id="games-grid">
+        <!-- O app.js preencherá esta área com os jogos. -->
+      </div>
+
+      <p class="empty-message" id="empty-message" hidden>
+        Nenhum jogo encontrado. Tente outra pesquisa.
+      </p>
+    </section>
+
+    <section class="notice">
+      <strong>Projeto demonstrativo</strong>
+      <p>
+        Este catálogo não aceita depósitos, apostas ou saques.
+        Os jogos exibidos são demonstrações visuais, sem integração
+        com provedores de jogos ou pagamentos.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year">2026</span> GSMSIL237</p>
+    <p>Plataforma demonstrativa em desenvolvimento.</p>
+  </footer>
+
+  <dialog id="game-dialog" class="game-dialog">
+    <button class="dialog-close" id="dialog-close" aria-label="Fechar">
+      ×
+    </button>
+    <div id="dialog-content"></div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+    </html>
+    
