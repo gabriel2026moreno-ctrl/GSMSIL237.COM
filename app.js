@@ -14,10 +14,11 @@ const games = [
   {name:"Shaolin Soccer",category:"Esportes",filter:"Recente",icon:"⚽",bg:"linear-gradient(145deg,#9bf4c1,#3b84ed)",desc:"Prévia demonstrativa com tema esportivo."}
 ];
 
-const grid = document.getElementById("gameGrid");
-const search = document.getElementById("searchInput");
-const empty = document.getElementById("emptyState");
-const dialog = document.getElementById("gameDialog");
+
+const grid = document.getElementById("games-grid");
+const search = document.getElementById("search");
+const empty = document.getElementById("empty-message");
+const dialog = document.getElementById("game-dialog");
 let category = "Todos";
 let filter = "Todos";
 
