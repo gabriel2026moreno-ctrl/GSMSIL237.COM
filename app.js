@@ -71,17 +71,33 @@ function renderGames() {
 }
 
 function openPreview(game) {
-  document.getElementById("dialogIcon").textContent = game.icon;
-  document.getElementById("dialogTitle").textContent = game.name;
-  document.getElementById("dialogDescription").textContent = game.desc;
+  const content = document.getElementById("dialog-content");
+
+  content.replaceChildren();
+
+  const icon = document.createElement("div");
+  icon.className = "preview-icon";
+  icon.textContent = game.icon;
+
+  const title = document.createElement("h2");
+  title.textContent = game.name;
+
+  const description = document.createElement("p");
+  description.textContent =
+    game.desc || "Jogo demonstrativo da GSMSIL237.";
+
+  const note = document.createElement("p");
+  note.textContent =
+    "Modo de demonstração. Integração oficial ainda não configurada.";
+
+  content.append(icon, title, description, note);
+
   if (typeof dialog.showModal === "function") {
     dialog.showModal();
   } else {
-    alert(game.name + "\n" + game.desc +
-      "\nIntegração oficial ainda não configurada.");
+    alert(game.name + "\n" + description.textContent);
   }
 }
-
 document.querySelectorAll(".category").forEach(button => {
   button.addEventListener("click", () => {
     category = button.dataset.category;
@@ -103,7 +119,11 @@ document.querySelectorAll(".filter").forEach(button => {
 });
 
 search.addEventListener("input", renderGames);
-document.getElementById("closeDialog").addEventListener("click", () => dialog.close());
+
+document
+  .getElementById("dialog-close")
+  .addEventListener("click", () => dialog.close());
+
 document.getElementById("okDialog").addEventListener("click", () => dialog.close());
 
 document.getElementById("menuButton").addEventListener("click", () => {
