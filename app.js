@@ -106,7 +106,6 @@ document.querySelectorAll(".category").forEach(button => {
     });
     renderGames();
   });
-});
 
 document.querySelectorAll(".filter").forEach(button => {
   button.addEventListener("click", () => {
@@ -116,12 +115,11 @@ document.querySelectorAll(".filter").forEach(button => {
     });
     renderGames();
   });
-});
 
 search.addEventListener("input", renderGames);
 
 document
-  .getElementById("dialog-close")
+  .getElementById("closeDialog")
   .addEventListener("click", () => dialog.close());
 
 document.getElementById("okDialog").addEventListener("click", () => dialog.close());
